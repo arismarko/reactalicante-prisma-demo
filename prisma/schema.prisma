@@ -1,0 +1,34 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file: dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Store {
+  coordinates   String?
+  date          DateTime
+  id            Int             @default(autoincrement()) @id
+  location      String?
+  storename     String
+  StoresOnItems StoresOnItems[]
+  Item          Item[]             
+}
+
+model Item {
+  id            Int             @default(autoincrement()) @id
+  item          String
+  number        String
+  StoresOnItems StoresOnItems[]
+  Store         Store[]      
+}
+
+model StoresOnItems {
+  itemId  Int
+  storeId Int
+  Item    Item  @relation(fields: [itemId], references: [id])
+  Store   Store @relation(fields: [storeId], references: [id])
+  @@id([storeId, itemId])
+}

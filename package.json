@@ -1,0 +1,27 @@
+{
+  "name": "alicante-prisma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "prisma": "^5.19.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "yelp-fusion": "^3.0.0"
+  },
+  "dependencies": {
+    "@api/yelp-developers": "file:.api/apis/yelp-developers",
+    "@prisma/client": "^5.19.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  }
+}
